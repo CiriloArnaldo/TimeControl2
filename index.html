@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronómetro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="box" id="cronometro">
+            <h1>Cronómetro</h1>
+            <div class="timer" id="timer">00:00:00</div>
+            <div class="buttons">
+                <button onclick="startTimer()">Iniciar</button>
+                <button onclick="pauseTimer()">Pausar</button>
+                <button onclick="resetTimer()">Reiniciar</button>
+            </div>
+        </div>
+
+        <div class="box" id="countDown">
+            countDown        
+        </div>
+
+        <div class="box" id="dia">
+            dia avance y desavance
+        </div>
+
+        <div class="box" id="semana">
+            Semana avance y desavance
+        </div>
+
+        <div class="box" id="month">
+            Mes avance y desavance
+
+        </div>
+        <div class="box" id="year">
+            Año avance y desavance. Year remaining
+
+        </div>
+        <div class="box" id="pomodoro">
+            Pomodoro
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
