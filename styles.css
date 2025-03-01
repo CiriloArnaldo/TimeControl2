@@ -1,9 +1,10 @@
+/*------------------------ CUERPO --------------------------------------*/
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 50px;
 }
-/*------------------------------------------------------------*/
+
 .container{
     display: grid;
     /*
@@ -36,17 +37,66 @@ body {
     background-color: #2980b9;
 }
 
-/*------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+/*------------------------ CRONOMETRO ----------------------------------*/
 
 .timer {
     font-size: 3rem;
     margin-bottom: 20px;
 }
-/*------------------------------------------------------------*/
 
-.buttons button {
+
+.buttons button { /*también cubre a los botones del Stopwatch*/
     font-size: 1.2rem;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
+}
+/*----------------------------------------------------------------------*/
+
+/*------------------------- STOPWATCH ----------------------------------*/
+#timeInput {
+    padding: 10px;
+    font-size: 1.2em;
+    width: 150px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#timer {
+    font-size: 3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Botones del CountDown*/
+#startBtn {
+    background-color: #28a745;
+}
+
+#startBtn:hover {
+    background-color: #218838;
+}
+
+#stopBtn {
+    background-color: #ffc107;
+}
+
+#stopBtn:hover {
+    background-color: #e0a800;
+}
+
+#resetBtn {
+    background-color: #dc3545;
+}
+
+#resetBtn:hover {
+    background-color: #b02a37;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
