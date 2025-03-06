@@ -8,23 +8,42 @@
 </head>
 <body>
     <h1>Welcome to Time Control</h1>
-    <p>This is a basic HTML structure for the Time Control project.</p>
+    <p>Se hará un tracking total del tiempo</p>
     Texto suelto
 
     <div class="container">
         <div class="box" id="stopWatch">
-
+            <h1>STOPWATCH</h1>
+            <div id="timer_stopWatch">00:00:00</div>
+            
+            <br>
+            <div class="buttons">
+                <button onclick="startTimer_stopWatch()">Iniciar</button>
+                <button onclick="pauseTimer_stopWatch()">Pausar</button>
+                <button onclick="resetTimer_stopWatch()">Reiniciar</button>
+            </div>
         </div>
 
-        <div class="box" id="countDown"></div>
+        <div class="box" id="countDown">
+            <h1>COUNTDOWN</h1>
+            <div id="timer_countDown">00:00:00</div>
+            <input type="number" id="time_countDown_Input" placeholder="Ingresa el tiempo en segundos" min="1">
+
+            <br>
+            <div class="buttons">
+                <button onclick="startTimer_countDown()">Iniciar</button>
+                <button onclick="pauseTimer_countDown()">Pausar</button>
+                <button onclick="resetTimer_countDown()">Reiniciar</button>
+            </div>
+        </div>
             
 
         <div class="box" id="Otro1">
-            gfg
+            <h1>Otro1</h1>
         </div>
 
         <div class="box" id="Otro2">
-            aha
+            <h1>Otro2</h1>
         </div>
     </div>
 
