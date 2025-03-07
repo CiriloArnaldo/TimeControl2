@@ -4,7 +4,9 @@ let elapsedTime = 0;
 let isRunning = false;
 
 // OBTENIDO PARÁMETROS DEL COUNTDOWN
-const timeInput = document.getElementById('timer_countDown');
+//   Entrada en el DOM
+// const timeInputCountDown = document.getElementById('timeInputCountDown');
+//   Salida en el DOM
 
 
 /*----------------------------------------------------------------------*/
@@ -47,7 +49,7 @@ function updateTimer() {
     document.getElementById('timer_stopWatch').textContent = formatTime(elapsedTime);
 
     // EN OBSERVACIÓN
-    // document.getElementById('timer_countDown').textContent = formatTime(timeInput.value*1000);
+    // document.getElementById('timerCountDown').textContent = formatTime(parseInt(document.getElementById('timeInputCountDown').value)*1000);
 
 }
 
