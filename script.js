@@ -5,11 +5,6 @@ let timerInterval
 let elapsedTime = 0;
 let isRunning = false;
 
-// OBTENIDO PARÁMETROS DEL COUNTDOWN
-//   Entrada en el DOM
-// const timeInputCountDown = document.getElementById('timeInputCountDown');
-//   Salida en el DOM
-  
 /*----------------------------- END ------------------------------*/
 
 /*----------------------------------------------------------------*/
@@ -62,9 +57,8 @@ function formatTime(ms) { // Esta función recibe en milisegundos
     return `${hours}:${minutes}:${seconds}`;
 }
 
-
-
 /*----------------------------- END ------------------------------*/
+
 
 /*----------------------------------------------------------------*/
 // COUNTDOWN
@@ -85,33 +79,57 @@ let initialTime = 0; // Tiempo inicial en segundos para reiniciar
 
 
 // ESTADO INICIAL
-stopBtn.disabled = true;
+stopBtn_countDown.disabled = true;
 displayInitialTime();
 
 //  Función para mostrar el tiempo inicial en el input
 function displayInitialTime() {
 
     timeLeft = parseInt(timeInputCountDown.value);
+    estudio(timeLeft); // ENTENDER 
     initialTime = timeLeft; // Guardamos el tiempo inicial
     displayTimerCountDown.textContent = formatTime(parseInt(timeInputCountDown.value)*1000);
 }
 
+// FUNCIÓN PARA ACTUALIZAR EL TEMPORIZADOR
+function updateTimerCountDown() {
+ 
+    displayTimerCountDown.textContent = formatTime(timeLeft*1000);
+
+    if (timeLeft > 0) {
+        timeLeft--;
+    } else {
+        clearInterval(timerId);
+        timerId = null;
+        
+        displayTimerCountDown.textContent = "00:00:00";
+        alert("¡Tiempo finalizado CRJ!");
+
+        startBtn_countDown.disabled = false;
+        stopBtn_countDown.disabled = true;
+    }
+}
+
+
 // BOTONES DEL COUNTDOWN
 
 //  Función para iniciar el temporizador
-function startTimer_countDown() {
+function startTimer_CountDown() {
+    
     if (timerId === null && timeLeft > 0) {
-        timerId = setInterval(updateTimer,1000);
-        
+        timerId = setInterval(updateTimerCountDown,1000);
+        estudio(timerId); // ENTENDER 
         startBtn_countDown.disabled = true;
         stopBtn_countDown.disabled = false; 
 
         timeInputCountDown.disabled = true; // Deactivar el input mientras corre     }
     }
+    
 }
 
 //  Función para detener el temporizador
-function pauseTimer_countDown() {
+function stopTimer_countDown() {
+    
     if (timerId !== null) {
         clearInterval(timerId);
         timerId = null;
@@ -119,10 +137,12 @@ function pauseTimer_countDown() {
         startBtn_countDown.disabled = false;
         stopBtn_countDown.disabled = true;
     }
+        
 }
 
 //  Función para reiniciar el temporizador
 function resetTimer_countDown() {
+    
     clearInterval(timerId);
     timerId = null;
     timeLeft = initialTime;
@@ -131,6 +151,19 @@ function resetTimer_countDown() {
     startBtn_countDown.disabled = false;
     stopBtn_countDown.disabled = true;
     timeInputCountDown.disabled = false; // Reactivar el input
+    
+}
+
+/*----------------------------- END ------------------------------*/
+
+
+/*----------------------------------------------------------------*/
+// AUXILIARES
+/*----------------------------------------------------------------*/
+function estudio(varia) {
+    console.log("--- ESTUDIO DE UNA VARIABLE ---");
+    console.log("El valor de la variable es: "+ varia);
+    console.log("El tipo de la variable es: "+ typeof(varia));
 }
 
 /*----------------------------- END ------------------------------*/
