@@ -27,12 +27,12 @@
         <div class="box" id="countDown">
             <h1>COUNTDOWN</h1>
             <div id="timerCountDown">00:00:00</div>
-            <input type="number" id="timeInputCountDown" placeholder="Ingresa el tiempo en segundos" min="1">
+            <input type="number" id="timeInputCountDown" placeholder="Ingresa el tiempo en segundos" min="1" value="10">
 
             <br>
             <div class="buttons">
                 <button onclick="startTimer_countDown()">Iniciar</button>
-                <button onclick="pauseTimer_countDown()">Pausar</button>
+                <button onclick="pauseTimer_countDown()" id="stopBtn">Pausar</button>
                 <button onclick="resetTimer_countDown()">Reiniciar</button>
             </div>
         </div>

@@ -14,7 +14,6 @@ let isRunning = false;
 /*------------------------ STOPWATCH ----------------------------------*/
 
 
-
 // BOTONES DEL STOPWATCH
 function startTimer_stopWatch() {
     if (!isRunning) {
@@ -67,18 +66,33 @@ function formatTime(ms) { // Esta función recibe en milisegundos
 
 /*------------------------ COUNTDOWN ----------------------------------*/
 
+// ENTRADA EN EL DOM
+const timeInputCountDown = document.getElementById('timeInputCountDown');
+const displayTimerCountDown = document.getElementById('timerCountDown');
 
-// BOTONOS DEL COUNTDOWN
+// ESTADO INICIAL
+stopBtn.disabled = true;
+displayInitialTime();
+
+//  Función para mostrar el tiempo inicial en el input
+function displayInitialTime() {
+
+    displayTimerCountDown.textContent = formatTime(parseInt(timeInputCountDown.value) * 1000);
+}
+
+// BOTONES DEL COUNTDOWN
+
+//  Función para iniciar el temporizador
 function startTimer_countDown() {
 
 }
 
-// Función para detener el temporizador
+//  Función para detener el temporizador
 function pauseTimer_countDown() {
 
 }
 
-// Función para reiniciar el temporizador
+//  Función para reiniciar el temporizador
 function resetTimer_countDown() {
 
 }
